@@ -1,0 +1,67 @@
+/* Estilos para el apartado de domicilio */
+body {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    font-family: 'Saiyan-Sans', cursive; /* Fuente Dragon Ball */
+    color: #e0e0e0; /* Texto gris claro */
+    margin: 0;
+    padding: 0;
+    background-image: url('goku.jpeg');
+    background-repeat: no-repeat;
+    background-position: right center; /* Imagen de Goku a la derecha */
+    background-size: 300px auto; /* Ajustar tamaño */
+}
+
+h1 {
+    color: #ffeb3b; /* Amarillo Saiyan */
+    text-align: center;
+    font-size: 54px; /* Tamaño aumentado */
+    text-shadow: 4px 4px #f44336, 6px 6px #000; /* Sombra roja y negra */
+    margin-top: 20px;
+    letter-spacing: 5px; /* Espaciado extra */
+    text-transform: uppercase;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2a2a2a; /* Fondo gris oscuro */
+    border: 4px solid #ff5722; /* Borde naranja Saiyan */
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #ff5722; /* Sombra Saiyan vibrante */
+}
+
+label {
+    color: #ff9800; /* Naranja vibrante */
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto gris claro */
+    border: 2px solid #ff5722; /* Borde Saiyan */
+    font-family: 'Saiyan-Sans', cursive; /* Fuente Dragon Ball */
+}
+
+button {
+    background-color: #f44336; /* Rojo intenso */
+    color: #ffeb3b; /* Amarillo Saiyan */
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-family: 'Saiyan-Sans', cursive; /* Fuente Dragon Ball */
+}
+
+button:hover {
+    background-color: #d32f2f; /* Rojo más oscuro */
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
