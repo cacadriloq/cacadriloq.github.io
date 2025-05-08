@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Autos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <link rel="stylesheet" href="top_autos.css">
+</head>
+<body>
+    <header>
+        <h1>🏆 Top 5 Autos Más Populares</h1>
+        <a href="catalogo.html">🔙 Volver al Catálogo</a>
+    </header>
+
+    <section id="top-autos" class="carousel">
+        <div class="auto">
+            <h2>🥇 Rayo McQueen</h2>
+            <img src="McQueen.jpg" alt="Rayo McQueen">
+            <p>El legendario campeón de carreras, pura velocidad y actitud. ¡Kachow! ⚡</p>
+        </div>
+        <div class="auto">
+            <h2>🥈 Toyota Supra</h2>
+            <img src="Toyota_Supra.jpg" alt="Toyota Supra">
+            <p>Rendimiento y diseño impresionante. Un ícono del tuning. 🚀</p>
+        </div>
+        <div class="auto">
+            <h2>🥉 Honda Civic Type R</h2>
+            <img src="Honda_Civic_Type_R_FK8.jpg" alt="Honda Civic Type R">
+            <p>Perfecta combinación de potencia y precisión en cada curva. 🔥</p>
+        </div>
+        <div class="auto">
+            <h2>Ford Mustang GT</h2>
+            <img src="Ford_Mustang_GT.jpg" alt="Ford Mustang GT">
+            <p>El clásico americano, pura potencia y estilo. 🏁</p>
+        </div>
+        <div class="auto">
+            <h2>Chevrolet Corvette Z06</h2>
+            <img src="Chevrolet_Corvette_Z06.jpg" alt="Chevrolet Corvette Z06">
+            <p>Una máquina aerodinámica con rendimiento de superdeportivo. 💨</p>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: true
+            });
+        });
+    </script>
+</body>
+</html>

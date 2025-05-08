@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Autos</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+    <header>
+        <h1>🚗 Catálogo de Autos</h1>
+        <a href="carrito.html">🛒 Ver Carrito</a>
+        <a href="top_autos.html">🏆 Top Autos</a>
+        <a href="carros.html">🔙 Volver al inicio</a>
+    </header>
+
+    <section id="autos">
+        <div class="producto" data-id="1" data-nombre="Toyota Corolla" data-precio="20000">
+            <img src="toyota-corolla.jpg" alt="Toyota Corolla">
+            <h3>Toyota Corolla</h3>
+            <p>Precio: $20,000</p>
+            <button onclick="agregarAlCarrito(1)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(1)">Más información</button>
+        </div>
+        <div class="producto" data-id="2" data-nombre="Toyota Supra" data-precio="40000">
+            <img src="toyota-supra.jpg" alt="Toyota Supra">
+            <h3>Toyota Supra</h3>
+            <p>Precio: $40,000</p>
+            <button onclick="agregarAlCarrito(2)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(2)">Más información</button>
+        </div>
+        <div class="producto" data-id="3" data-nombre="Honda Civic" data-precio="22000">
+            <img src="honda-civic.jpg" alt="Honda Civic">
+            <h3>Honda Civic</h3>
+            <p>Precio: $22,000</p>
+            <button onclick="agregarAlCarrito(3)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(3)">Más información</button>
+        </div>
+        <div class="producto" data-id="4" data-nombre="Honda Accord" data-precio="25000">
+            <img src="honda-accord.jpg" alt="Honda Accord">
+            <h3>Honda Accord</h3>
+            <p>Precio: $25,000</p>
+            <button onclick="agregarAlCarrito(4)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(4)">Más información</button>
+        </div>
+        <div class="producto" data-id="5" data-nombre="Ford Mustang" data-precio="35000">
+            <img src="ford-mustang.jpg" alt="Ford Mustang">
+            <h3>Ford Mustang</h3>
+            <p>Precio: $35,000</p>
+            <button onclick="agregarAlCarrito(5)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(5)">Más información</button>
+        </div>
+        <div class="producto" data-id="6" data-nombre="Ford Explorer" data-precio="33000">
+            <img src="ford-explorer.jpg" alt="Ford Explorer">
+            <h3>Ford Explorer</h3>
+            <p>Precio: $33,000</p>
+            <button onclick="agregarAlCarrito(6)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(6)">Más información</button>
+        </div>
+        <div class="producto" data-id="7" data-nombre="Chevrolet Camaro" data-precio="38000">
+            <img src="chevrolet-camaro.jpg" alt="Chevrolet Camaro">
+            <h3>Chevrolet Camaro</h3>
+            <p>Precio: $38,000</p>
+            <button onclick="agregarAlCarrito(7)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(7)">Más información</button>
+        </div>
+        <div class="producto" data-id="8" data-nombre="Tesla Model S" data-precio="80000">
+            <img src="tesla-model-s.jpg" alt="Tesla Model S">
+            <h3>Tesla Model S</h3>
+            <p>Precio: $80,000</p>
+            <button onclick="agregarAlCarrito(8)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(8)">Más información</button>
+        </div>
+        <div class="producto" data-id="9" data-nombre="BMW M3" data-precio="75000">
+            <img src="bmw-m3.jpg" alt="BMW M3">
+            <h3>BMW M3</h3>
+            <p>Precio: $75,000</p>
+            <button onclick="agregarAlCarrito(9)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(9)">Más información</button>
+        </div>
+        <div class="producto" data-id="10" data-nombre="Mercedes-Benz C-Class" data-precio="50000">
+            <img src="mercedes-c-class.jpg" alt="Mercedes-Benz C-Class">
+            <h3>Mercedes-Benz C-Class</h3>
+            <p>Precio: $50,000</p>
+            <button onclick="agregarAlCarrito(10)">Agregar al carrito</button>
+            <button onclick="mostrarInformacion(10)">Más información</button>
+        </div>
+    </section>
+
+    <script>
+        function agregarAlCarrito(id) {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const auto = document.querySelector(`[data-id="${id}"]`);
+            const producto = {
+                id,
+                nombre: auto.dataset.nombre,
+                precio: parseFloat(auto.dataset.precio)
+            };
+
+            carrito.push(producto);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            alert("Producto agregado al carrito");
+        }
+        function agregarAlCarrito(id) {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const auto = document.querySelector(`[data-id="${id}"]`);
+            const producto = {
+                id,
+                nombre: auto.dataset.nombre,
+                precio: parseFloat(auto.dataset.precio)
+            };
+
+            carrito.push(producto);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            alert("Producto agregado al carrito");
+        }
+
+        function mostrarInformacion(id) {
+            window.location.href = `informacion.html?id=${id}`;
+        }
+    </script>
+</body>
+</html>

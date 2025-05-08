@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    text-align: center;
+    background: url('fondo-autos.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+header {
+    background: url('barra-autos.jpg') no-repeat center center;
+    background-size: 100% auto; /* Ajuste de ancho al 100%, altura automática */
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
+
+
+#carrito {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.boton-eliminar {
+    background: red;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.total {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pagar-btn {
+    background: green;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}

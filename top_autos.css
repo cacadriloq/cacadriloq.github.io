@@ -1,0 +1,60 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('fondo-autos.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+header {
+    background: url('barra-autos.jpg') no-repeat center center;
+    background-size: 100% auto; /* Ajuste de ancho al 100%, altura automática */
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
+
+
+
+/* Carrusel */
+.carousel {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Contenedor de cada auto */
+.auto {
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Imagen de los autos */
+.auto img {
+    display: block;
+    margin: 0 auto;
+    width: 450px; /* Ajuste de tamaño */
+    height: 300px; /* Ajuste de tamaño */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Animaciones al pasar el mouse */
+.auto:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para los botones del carrusel */
+.slick-prev, .slick-next {
+    font-size: 20px;
+    color: #ff4500 !important;
+}
+
+/* Estilos para los puntos de navegación */
+.slick-dots li button:before {
+    font-size: 15px;
+    color: #ff4500 !important;
+}

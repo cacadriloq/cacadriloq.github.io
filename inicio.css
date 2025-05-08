@@ -1,0 +1,37 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    background: url('fondo-autos.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Encabezado con imagen de fondo */
+/* Encabezado con imagen de fondo estirada horizontalmente */
+header {
+    background: url('barra-autos.jpg') no-repeat center center;
+    background-size: 100% auto; /* Ajuste de ancho al 100%, altura automática */
+    background-position: center;
+    color: white;
+    padding: 20px;
+}
+
+
+/* Menú de navegación */
+nav a {
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Animación de entrada */
+.animacion {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
