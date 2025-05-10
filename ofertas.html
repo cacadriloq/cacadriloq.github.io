@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas y Descuentos</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+    <header>
+        <h1>🚗 Ofertas y Descuentos 🔥</h1>
+        <a href="catalogo.html">📦 Ver Catálogo</a>
+        <a href="carrito.html">🛒 Ver Carrito</a>
+        <a href="catalogo.html">🔙 Volver al Catálogo</a>
+    </header>
+
+    <section id="autos">
+        <div class="producto" data-id="1" data-nombre="Toyota Corolla" data-precio="20000" data-descuento="15">
+            <img src="toyota-corolla.jpg" alt="Toyota Corolla">
+            <h3>🔥 Toyota Corolla</h3>
+            <p>Antes: <s>$20,000</s></p>
+            <p>Ahora: <strong>$17,000</strong></p>
+            <button onclick="agregarAlCarrito(1)">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-id="2" data-nombre="Toyota Supra" data-precio="40000" data-descuento="10">
+            <img src="toyota-supra.jpg" alt="Toyota Supra">
+            <h3>🔥 Toyota Supra</h3>
+            <p>Antes: <s>$40,000</s></p>
+            <p>Ahora: <strong>$36,000</strong></p>
+            <button onclick="agregarAlCarrito(2)">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-id="3" data-nombre="Ford Mustang" data-precio="35000" data-descuento="12">
+            <img src="ford-mustang.jpg" alt="Ford Mustang">
+            <h3>🔥 Ford Mustang</h3>
+            <p>Antes: <s>$35,000</s></p>
+            <p>Ahora: <strong>$30,800</strong></p>
+            <button onclick="agregarAlCarrito(3)">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-id="4" data-nombre="Tesla Model S" data-precio="80000" data-descuento="18">
+            <img src="tesla-model-s.jpg" alt="Tesla Model S">
+            <h3>🔥 Tesla Model S</h3>
+            <p>Antes: <s>$80,000</s></p>
+            <p>Ahora: <strong>$65,600</strong></p>
+            <button onclick="agregarAlCarrito(4)">Agregar al carrito</button>
+        </div>
+        <div class="producto" data-id="5" data-nombre="BMW M3" data-precio="75000" data-descuento="20">
+            <img src="bmw-m3.jpg" alt="BMW M3">
+            <h3>🔥 BMW M3</h3>
+            <p>Antes: <s>$75,000</s></p>
+            <p>Ahora: <strong>$60,000</strong></p>
+            <button onclick="agregarAlCarrito(5)">Agregar al carrito</button>
+        </div>
+    </section>
+
+    <script>
+        function agregarAlCarrito(id) {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const auto = document.querySelector(`[data-id="${id}"]`);
+            const descuento = parseFloat(auto.dataset.descuento);
+            const precioOriginal = parseFloat(auto.dataset.precio);
+            const precioDescuento = precioOriginal - (precioOriginal * (descuento / 100));
+
+            const producto = {
+                id,
+                nombre: auto.dataset.nombre,
+                precio: precioDescuento
+            };
+
+            carrito.push(producto);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            alert("¡Auto con descuento agregado al carrito!");
+        }
+    </script>
+</body>
+</html>
