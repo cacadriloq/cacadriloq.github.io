@@ -11,10 +11,17 @@
     <link rel="stylesheet" href="top_autos.css">
 </head>
 <body>
-    <header>
-        <h1>🏆 Top 5 Autos Más Populares</h1>
-        <a href="catalogo.html">🔙 Volver al Catálogo</a>
-    </header>
+   <header>
+    <button id="top-title">🏆 Top 5 Autos Más Populares</button>
+    <button onclick="window.location.href='catalogo.html'">🔙 Volver al Catálogo</button>
+</header>
+
+<script>
+    document.getElementById('top-title').addEventListener('click', function() {
+        alert("Top 5 Autos Más Populares");
+    });
+</script>
+
 
     <section id="top-autos" class="carousel">
         <button class="auto">
