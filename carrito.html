@@ -16,7 +16,7 @@
             <button onclick="window.location.href='catalogo.html'">🔙 Seguir comprando</button>
         </nav>
     </header>
-
+<div class="contc">
 <section id="carrito"></section>
 <h2>Total: <span id="total">$0</span></h2>
 
@@ -52,7 +52,7 @@
 
 <!-- Botón de Pagar -->
 <button id="payButton">💳 Pagar</button>
-
+</div>
 <script>
     const carritoCompras = JSON.parse(localStorage.getItem("carrito")) || [];
     const carritoContainer = document.getElementById("carrito");
