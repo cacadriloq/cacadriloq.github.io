@@ -61,10 +61,18 @@
             const urlParams = new URLSearchParams(window.location.search);
             const autoId = urlParams.get("id");
 
-            const autos = [
-                { id: 1, nombre: "Toyota Corolla", marca: "Toyota", año: 2023, combustible: "Gasolina", motor: "1.8L", potencia: "140 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$500/año", img: "toyota-corolla.jpg" },
-                { id: 2, nombre: "Toyota Supra", marca: "Toyota", año: 2022, combustible: "Gasolina", motor: "3.0L Turbo", potencia: "382 HP", emisiones: "Moderadas", airbag: "Sí", mantenimiento: "$1200/año", img: "toyota-supra.jpg" }
-            ];
+           const autos = [
+            { id: 1, nombre: "Toyota Corolla", marca: "Toyota", año: 2023, combustible: "Gasolina", motor: "1.8L", potencia: "140 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$500/año", img: "toyota-corolla.jpg" },
+            { id: 2, nombre: "Toyota Supra", marca: "Toyota", año: 2022, combustible: "Gasolina", motor: "3.0L Turbo", potencia: "382 HP", emisiones: "Moderadas", airbag: "Sí", mantenimiento: "$1200/año", img: "toyota-supra.jpg" },
+            { id: 3, nombre: "Honda Civic", marca: "Honda", año: 2022, combustible: "Gasolina", motor: "2.0L", potencia: "158 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$600/año", img: "honda-civic.jpg" },
+            { id: 4, nombre: "Honda Accord", marca: "Honda", año: 2023, combustible: "Gasolina", motor: "1.5L Turbo", potencia: "192 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$700/año", img: "honda-accord.jpg" },
+            { id: 5, nombre: "Ford Mustang", marca: "Ford", año: 2021, combustible: "Gasolina", motor: "5.0L V8", potencia: "450 HP", emisiones: "Altas", airbag: "Sí", mantenimiento: "$1500/año", img: "ford-mustang.jpg" },
+            { id: 6, nombre: "Ford Explorer", marca: "Ford", año: 2024, combustible: "Gasolina", motor: "3.0L V6", potencia: "365 HP", emisiones: "Moderadas", airbag: "Sí", mantenimiento: "$1100/año", img: "ford-explorer.jpg" },
+            { id: 7, nombre: "Chevrolet Camaro", marca: "Chevrolet", año: 2022, combustible: "Gasolina", motor: "6.2L V8", potencia: "455 HP", emisiones: "Altas", airbag: "Sí", mantenimiento: "$1300/año", img: "chevrolet-camaro.jpg" },
+            { id: 8, nombre: "Tesla Model S", marca: "Tesla", año: 2023, combustible: "Eléctrico", motor: "Dual Motor", potencia: "670 HP", emisiones: "Cero", airbag: "Sí", mantenimiento: "$300/año", img: "tesla-model-s.jpg" },
+            { id: 9, nombre: "BMW M3", marca: "BMW", año: 2023, combustible: "Gasolina", motor: "3.0L Turbo", potencia: "473 HP", emisiones: "Moderadas", airbag: "Sí", mantenimiento: "$1000/año", img: "bmw-m3.jpg" },
+            { id: 10, nombre: "Mercedes-Benz C-Class", marca: "Mercedes-Benz", año: 2023, combustible: "Gasolina", motor: "2.0L Turbo", potencia: "255 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$900/año", img: "mercedes-c-class.jpg" }
+        ];
 
             const autoSeleccionado = autos.find(auto => auto.id == autoId);
             if (autoSeleccionado) {
