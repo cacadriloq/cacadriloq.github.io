@@ -6,7 +6,7 @@
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="carrito.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-     <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -31,60 +31,44 @@
             margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
-        footer {
-            background-color: rgba(51, 51, 51, 0.8);
+        .info-cuadro h2 {
+            margin-bottom: 10px;
+        }
+        .info-cuadro button {
+            background-color: #ff5733;
             color: white;
-            padding: 10px;
-            margin-top: 20px;
+            padding: 15px 25px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-cuadro button:hover {
+            background-color: #c70039;
         }
     </style>
-
 </head>
 <body>
     <header>
-    <h1>Tu Carrito 🛒</h1>
-    <nav>
-        <button onclick="window.location.href='catalogo.html'">🔙 Seguir comprando</button>
-    </nav>
-</header>
-
+        <h1>Tu Carrito 🛒</h1>
+        <nav>
+            <button onclick="window.location.href='catalogo.html'">🔙 Seguir comprando</button>
+        </nav>
+    </header>
 
     <section id="carrito"></section>
-    <h2>Total: <span id="total">$0</span></h2>
 
-    <!-- Modal de Pago y Envío -->
-    <div id="paymentModal" class="modal">
-        <div class="modal-content">
-            <h2>Detalles de Pago y Envío</h2>
-            <form id="paymentForm">
-                <h3>Datos de Pago</h3>
-                <label for="cardNumber">Número de tarjeta:</label>
-                <input type="text" id="cardNumber" required maxlength="16" pattern="\d{16}" placeholder="1234 5678 9012 3456">
-
-                <label for="expiry">Fecha de expiración (MM/AA):</label>
-                <input type="text" id="expiry" required placeholder="MM/AA" pattern="\d{2}/\d{2}">
-
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" required maxlength="3" pattern="\d{3}" placeholder="123">
-
-                <h3>Detalles de Envío</h3>
-                <label for="street">Calle:</label>
-                <input type="text" id="street" required placeholder="Ej. Av. Siempre Viva 123">
-                
-                <label for="postalCode">Código Postal:</label>
-                <input type="text" id="postalCode" required maxlength="5" pattern="\d{5}" placeholder="Ej. 12345">
-
-                <label for="phone">Teléfono:</label>
-                <input type="text" id="phone" required maxlength="10" pattern="\d{10}" placeholder="Ej. 5512345678">
-
-                <button type="submit">Hacer Pedido</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Botón de Pagar -->
-    <button id="payButton">💳 Pagar</button>
+    <!-- Cuadro naranja con total y botón de pagar -->
+    <section class="info-cuadro">
+        <h2>Total: <span id="total">$0</span></h2>
+        <p>💳 **Métodos de pago:** Tarjeta de crédito, débito y transferencia.</p>
+        <p>📦 **Envío rápido:** Recibe tu auto en menos de 48 horas.</p>
+        <p>🔒 **Compra segura:** Protección y garantía en todas las compras.</p>
+        <button id="payButton">💳 Pagar</button>
+    </section>
 
     <script>
         const carritoCompras = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -95,71 +79,15 @@
             carritoContainer.innerHTML = "";
             let total = 0;
 
-            carritoCompras.forEach((producto, index) => {
+            carritoCompras.forEach((producto) => {
                 let div = document.createElement("div");
-                div.classList.add("carrito-item");
-                div.innerHTML = `<span>${producto.nombre} - $${producto.precio}</span>
-                                 <button class="boton-eliminar" onclick="eliminarProducto(${index})">❌</button>`;
+                div.innerHTML = `<span>${producto.nombre} - $${producto.precio}</span>`;
                 carritoContainer.appendChild(div);
                 total += producto.precio;
             });
 
             totalSpan.textContent = `$${total}`;
         }
-
-        function eliminarProducto(index) {
-            carritoCompras.splice(index, 1);
-            localStorage.setItem("carrito", JSON.stringify(carritoCompras));
-            actualizarCarrito();
-        }
-
-        document.getElementById('payButton').addEventListener('click', function() {
-            document.getElementById('paymentModal').style.display = 'block';
-        });
-
-        document.getElementById('paymentForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const paymentDetails = {
-                cardNumber: document.getElementById('cardNumber').value,
-                expiry: document.getElementById('expiry').value,
-                cvv: document.getElementById('cvv').value,
-                street: document.getElementById('street').value,
-                postalCode: document.getElementById('postalCode').value,
-                phone: document.getElementById('phone').value
-            };
-
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-
-            doc.setFont("helvetica", "bold");
-            doc.setFontSize(18);
-            doc.text("Ticket de Compra", 20, 20);
-
-            doc.setFontSize(12);
-            doc.text("Dirección de envío: " + paymentDetails.street + ", C.P. " + paymentDetails.postalCode, 20, 40);
-            doc.text("Teléfono: " + paymentDetails.phone, 20, 50);
-
-            doc.text("Productos comprados:", 20, 70);
-            let y = 80;
-            carritoCompras.forEach((producto) => {
-                doc.text(`- ${producto.nombre}: $${producto.precio}`, 20, y);
-                y += 10;
-            });
-
-            doc.setFontSize(14);
-            doc.text("Total: $" + totalSpan.textContent, 20, y + 20);
-            doc.text("¡Gracias por tu compra!", 20, y + 40);
-
-            doc.save("ticket_compra.pdf");
-
-            alert("Pedido realizado con éxito. Se ha generado tu ticket en PDF.");
-            document.getElementById('paymentModal').style.display = 'none';
-
-            carritoCompras.length = 0;
-            localStorage.setItem("carrito", JSON.stringify(carritoCompras));
-            actualizarCarrito();
-        });
 
         actualizarCarrito();
     </script>
