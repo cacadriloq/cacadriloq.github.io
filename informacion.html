@@ -11,15 +11,18 @@
             text-align: center;
             background-color: #f4f4f4;
         }
-        header {
+        .btn-regresar {
             background-color: #ff5733;
-            padding: 20px;
             color: white;
+            padding: 15px 25px;
+            border: none;
+            font-size: 18px;
             cursor: pointer;
-            font-size: 24px;
-            font-weight: bold;
+            border-radius: 5px;
+            margin: 20px auto;
+            display: block;
         }
-        header:hover {
+        .btn-regresar:hover {
             background-color: #c70039;
         }
         .info-contenedor {
@@ -37,9 +40,8 @@
     </style>
 </head>
 <body>
-    <header onclick="window.location.href='catalogo.html'">
-        Información del Auto 🚘 (Haz clic para volver al catálogo)
-    </header>
+
+    <button class="btn-regresar" onclick="window.location.href='catalogo.html'">🔙 Regresar al Catálogo</button>
 
     <section class="info-contenedor">
         <h2 id="nombre-auto"></h2>
@@ -79,5 +81,6 @@
             }
         });
     </script>
+
 </body>
 </html>
