@@ -40,7 +40,13 @@ header {
     padding: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+.contac{
+text-align: center;
+    max-width: 500px;
+    margin: auto;
+ background: #f37712;
 
+}
 /* Botón para eliminar elementos */
 .boton-eliminar {
     background: #ff4d4d;
