@@ -39,8 +39,11 @@ input, select {
 }
 
 .producto img {
-    width: 100%;
-    border-radius: 10px;
+    width: 250px; /* Tamaño uniforme */
+    height: 200px;
+    object-fit: cover; /* Ajusta la imagen sin distorsionar */
+    border-radius: 10px; /* Bordes redondeados opcionales */
+
 }
 
 .producto:hover {
