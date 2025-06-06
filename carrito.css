@@ -10,16 +10,17 @@ body {
 }
 
 .info-cuadro {
-    background-color: rgba(0, 0, 0, 0.8); /* Negro con opacidad */
-    color: white; /* Texto en blanco para mejor visibilidad */
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con mayor transparencia para efecto difuminado */
+    color: white; /* Texto en blanco */
     padding: 20px;
     width: 50%;
     margin: 50px auto;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2); /* Efecto de brillo suave */
     text-align: center;
-    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    backdrop-filter: blur(15px); /* Aumentar desenfoque para mayor efecto difuminado */
 }
+
 
 header {
     background: url('barra-autos.jpg') no-repeat center center;
