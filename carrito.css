@@ -1,36 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     background: url('fondoauto.jpg') no-repeat center center fixed;
     background-size: cover;
+    color: #fff;
+    margin: 0;
 }
 
 .info-cuadro {
-    background-color: rgba(255, 165, 0, 0.5); /* Más transparente */
+    background-color: rgba(255, 165, 0, 0.7);
     padding: 20px;
-    width: 50%; /* Ajustar el ancho para que esté centrado */
-    margin: 50px auto; /* Mayor separación */
+    width: 50%;
+    margin: 50px auto;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
     text-align: center;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
 }
+
 header {
     background: url('barra-autos.jpg') no-repeat center center;
-    background-size: 100% auto; /* Ajuste de ancho al 100%, altura automática */
+    background-size: cover;
     background-position: center;
     color: white;
     padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
-
 
 #carrito {
     margin: 20px auto;
     width: 80%;
     max-width: 600px;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .carrito-item {
@@ -41,23 +49,37 @@ header {
 }
 
 .boton-eliminar {
-    background: red;
+    background: #ff4d4d;
     color: white;
-    padding: 5px;
+    padding: 8px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.boton-eliminar:hover {
+    background: #cc0000;
 }
 
 .total {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .pagar-btn {
-    background: green;
+    background: #4CAF50;
     color: white;
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
 }
+
+.pagar-btn:hover {
+    transform: scale(1.05);
+}
+
