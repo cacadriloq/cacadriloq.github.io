@@ -5,14 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información del Auto</title>
     <link rel="stylesheet" href="catalogo.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #ff5733;
+            padding: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        header:hover {
+            background-color: #c70039;
+        }
+        .info-contenedor {
+            background-color: rgba(255, 165, 0, 0.8);
+            padding: 20px;
+            width: 60%;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+        .info-contenedor img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Información del Auto 🚘</h1>
-        <a href="catalogo.html">🔙 Volver al Catálogo</a>
+    <header onclick="window.location.href='catalogo.html'">
+        Información del Auto 🚘 (Haz clic para volver al catálogo)
     </header>
 
-    <section id="info-auto">
+    <section class="info-contenedor">
         <h2 id="nombre-auto"></h2>
         <img id="imagen-auto" src="" alt="Auto">
         <p><strong>Marca:</strong> <span id="marca-auto"></span></p>
@@ -32,15 +61,7 @@
 
             const autos = [
                 { id: 1, nombre: "Toyota Corolla", marca: "Toyota", año: 2023, combustible: "Gasolina", motor: "1.8L", potencia: "140 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$500/año", img: "toyota-corolla.jpg" },
-                { id: 2, nombre: "Toyota Supra", marca: "Toyota", año: 2022, combustible: "Gasolina", motor: "3.0L Turbo", potencia: "382 HP", emisiones: "Moderadas", airbag: "Sí", mantenimiento: "$1200/año", img: "toyota-supra.jpg" },
-                { id: 3, nombre: "Honda Civic", marca: "Honda", año: 2022, combustible: "Gasolina", motor: "2.0L", potencia: "158 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$600/año", img: "honda-civic.jpg" },
-                { id: 4, nombre: "Honda Accord", marca: "Honda", año: 2023, combustible: "Gasolina", motor: "1.5L Turbo", potencia: "192 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$700/año", img: "honda-accord.jpg" },
-                { id: 5, nombre: "Ford Mustang", marca: "Ford", año: 2021, combustible: "Gasolina", motor: "5.0L V8", potencia: "450 HP", emisiones: "Altas", airbag: "Sí", mantenimiento: "$1500/año", img: "ford-mustang.jpg" },
-                { id: 6, nombre: "Ford Explorer", marca: "Ford", año: 2024, combustible: "Gasolina", motor: "3.0L V6", potencia: "365 HP", emisiones: "Moderadas", airbag: "Sí", mantenimiento: "$1100/año", img: "ford-explorer.jpg" },
-                { id: 7, nombre: "Chevrolet Camaro", marca: "Chevrolet", año: 2022, combustible: "Gasolina", motor: "6.2L V8", potencia: "455 HP", emisiones: "Altas", airbag: "Sí", mantenimiento: "$1300/año", img: "chevrolet-camaro.jpg" },
-                { id: 8, nombre: "Tesla Model S", marca: "Tesla", año: 2023, combustible: "Eléctrico", motor: "Dual Motor", potencia: "670 HP", emisiones: "Cero", airbag: "Sí", mantenimiento: "$300/año", img: "tesla-model-s.jpg" },
-                { id: 9, nombre: "BMW M3", marca: "BMW", año: 2023, combustible: "Gasolina", motor: "3.0L Turbo", potencia: "473 HP", emisiones: "Moderadas", airbag: "Sí", mantenimiento: "$1000/año", img: "bmw-m3.jpg" },
-                { id: 10, nombre: "Mercedes-Benz C-Class", marca: "Mercedes-Benz", año: 2023, combustible: "Gasolina", motor: "2.0L Turbo", potencia: "255 HP", emisiones: "Bajas", airbag: "Sí", mantenimiento: "$900/año", img: "mercedes-c-class.jpg" }
+                { id: 2, nombre: "Toyota Supra", marca: "Toyota", año: 2022, combustible: "Gasolina", motor: "3.0L Turbo", potencia: "382 HP", emisiones: "Moderadas", airbag: "Sí", mantenimiento: "$1200/año", img: "toyota-supra.jpg" }
             ];
 
             const autoSeleccionado = autos.find(auto => auto.id == autoId);
