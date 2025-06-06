@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #f9f9f9, #eeeeee);
     text-align: center;
-    background: url('fondo-autos.jpg') no-repeat center center fixed;
+    background: url('fondoauto.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 header {
