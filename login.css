@@ -1,19 +1,53 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f9f9f9, #eeeeee);
+    text-align: center;
+}
+
+.login-container {
+    padding: 12px; /* Reducción adicional del relleno */
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: auto;
+}
+
 input {
-    padding: 6px; /* Reducimos más el espacio interno */
-    margin: 4px; /* Menos espacio entre los inputs */
+    padding: 5px; /* Espacio interno más pequeño */
+    margin: 3px; /* Reduce separación entre inputs */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 90%;
 }
 
 button {
-    padding: 6px; /* Ajustamos el tamaño del botón */
+    background: #008CBA;
+    color: white;
+    padding: 5px; /* Ajustamos el tamaño del botón */
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #005f75;
 }
 
 .comentarios-container {
-    margin-top: 15px; /* Reducción sutil en la separación superior */
-    padding: 15px; /* Ajuste del relleno interno */
+    margin-top: 12px; /* Reducción adicional en separación superior */
+    background: white;
+    padding: 12px; /* Ajuste del relleno interno */
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 textarea {
-    height: 200px; /* Mantiene el tamaño del área de comentarios */
-    padding: 6px; /* Reduce el espacio interno */
-    margin: 4px 0; /* Hace los espacios más compactos */
+    height: 200px; /* Mantiene tamaño amplio para comentarios */
+    padding: 5px; /* Reduce espacio interno */
+    margin: 3px 0; /* Hace los espacios más compactos */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    resize: vertical; /* Permite ajustar manualmente */
 }
