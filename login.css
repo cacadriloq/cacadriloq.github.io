@@ -5,29 +5,34 @@ body {
 }
 
 .login-container {
-    padding: 12px; /* Reducción adicional del relleno */
+    padding: 10px; /* Espacio mínimo */
     background: white;
     border-radius: 5px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
     width: 300px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 input {
-    padding: 5px; /* Espacio interno más pequeño */
-    margin: 3px; /* Reduce separación entre inputs */
+    padding: 4px; /* Espacio interno más pequeño */
+    margin: 2px; /* Reducción del margen entre inputs */
     border-radius: 5px;
     border: 1px solid #ddd;
-    width: 90%;
+    width: 80%;
+    text-align: center; /* Centra el texto dentro del input */
 }
 
 button {
     background: #008CBA;
     color: white;
-    padding: 5px; /* Ajustamos el tamaño del botón */
+    padding: 4px; /* Espacio más reducido */
     border: none;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+    width: 80%;
 }
 
 button:hover {
@@ -35,19 +40,24 @@ button:hover {
 }
 
 .comentarios-container {
-    margin-top: 12px; /* Reducción adicional en separación superior */
+    margin-top: 10px; /* Reducción de espacio superior */
     background: white;
-    padding: 12px; /* Ajuste del relleno interno */
+    padding: 10px; /* Ajuste de relleno interno */
     border-radius: 10px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos */
 }
 
 textarea {
-    height: 200px; /* Mantiene tamaño amplio para comentarios */
-    padding: 5px; /* Reduce espacio interno */
-    margin: 3px 0; /* Hace los espacios más compactos */
+    height: 180px; /* Mantiene espacio amplio para comentarios */
+    padding: 4px; /* Reduce espacio interno */
+    margin: 2px 0; /* Espacios compactos */
     border-radius: 5px;
     border: 1px solid #ddd;
-    width: 100%;
+    width: 80%;
     resize: vertical; /* Permite ajustar manualmente */
+    text-align: center; /* Centra el texto dentro del textarea */
 }
+
