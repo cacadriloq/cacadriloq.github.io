@@ -35,9 +35,9 @@ button:hover {
 }
 
 .comentarios-container {
-    margin-top: 20px;
+    margin-top: 50px;
     background: white;
-    padding: 15px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
