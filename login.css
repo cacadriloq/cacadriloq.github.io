@@ -14,12 +14,14 @@ body {
 }
 
 input {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 90%;
+    padding: 5px; /* Reduce el relleno interno */
+    margin: 5px; /* Reduce el margen entre inputs */
 }
+.comentarios-container {
+    margin-top: 20px; /* Reduce la separación superior */
+    padding: 15px; /* Ajusta el relleno interno */
+}
+
 
 button {
     background: #008CBA;
